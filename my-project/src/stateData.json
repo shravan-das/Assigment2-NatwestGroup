@@ -1,0 +1,16 @@
+ [
+    {"stateName": "New Delhi", "population": 30538223},
+    {"stateName": "Kolkata", "population": 15145505},
+    {"stateName": "Mumbai", "population": 21538187},
+    {"stateName": "Ahmedabad", "population": 20201249},
+    {"stateName": "Bengaluru", "population": 13011844},
+    {"stateName": "Chennai", "population": 12812508},
+    {"stateName": "Jaipur", "population": 10736059},
+    {"stateName": "Surat", "population": 10611862},
+    {"stateName": "Lucknow", "population": 10077331},
+    {"stateName": "Hyderabad", "population": 9288994},
+    {"stateName": "Indore", "population": 8626207},
+    {"stateName": "Kanpur", "population": 7693612}
+]
+
+
