@@ -13,7 +13,7 @@ const WeatherDetail = () => {
       try {
         const updatedStates = await Promise.all(stateData.map(async (state) => {
           try {
-            const coordinatesResponse = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${state.stateName}&limit=1&appid=5662d3349444797225ffc23c3868e1e5`);
+            const coordinatesResponse = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${state.stateName}&limit=1&appid=5662d3349444797225ffc23c3868e1e5`);
             const coordinates = coordinatesResponse.data[0];
             const weatherDataResponse = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=5662d3349444797225ffc23c3868e1e5&units=metric`);
             const weatherData = weatherDataResponse.data;
