@@ -33,11 +33,11 @@ const ChartComponent = () => {
         }],
       },
       options: {
-        maintainAspectRatio: false, // Allow resizing without maintaining aspect ratio
+        maintainAspectRatio: false,
         responsive: true, // Enable responsiveness
         scales: {
           y: {
-            beginAtZero: true // Start y-axis from zero
+            beginAtZero: true 
           }
         }
       }
