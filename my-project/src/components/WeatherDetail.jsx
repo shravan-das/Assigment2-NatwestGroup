@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';;
+import { useNavigate } from 'react-router-dom';
 import stateData from '../stateData.json';
 
 const WeatherDetail = () => {
@@ -45,30 +45,33 @@ const WeatherDetail = () => {
   };
 
   return (
-    <div className="h-12 grid grid-cols-3 gap-x-60 gap-y-2 justify-evenly">
-      {states.map((state, index) => (
-        <div
-          key={index}
-          className={`relative p-4 border border-gray-400 ${getColorClass(state?.weather?.main?.temp)}`}
-          style={{
-            width: `${calculateFrameSize(state.population)}px`,
-            height: `${calculateFrameSize(state.population)}px`,
-            marginBottom: '10px',
-            marginRight: index % 4 !== 3 ? '10px' : '0px', 
-          }}
-          onMouseOver={() => handleMouseOver(state)}
-          onMouseOut={handleMouseOut}
-          onClick={handleFrameClick}
-        >
-          <h2 className="text-lg font-semibold">{state.stateName}</h2>
-          {tooltipState === state && (
-            <div className=" text-black absolute bottom-full left-0 bg-white p-2 shadow-md">
-              <p>Population: {state.population}</p>
-              {state.weather ? <p>Temperature: {state.weather.main.temp}°C</p> : <p>Temperature: N/A</p>}
-            </div>
-          )}
-        </div>
-      ))}
+    <div className="flex flex-col items-center">
+      <h1 className="text-2xl text-black font-semibold mb-4">Distributed TreeMap</h1>
+      <div className="grid grid-cols-3 gap-x-60 gap-y-2 justify-evenly">
+        {states.map((state, index) => (
+          <div
+            key={index}
+            className={`relative p-4 border border-gray-400 ${getColorClass(state?.weather?.main?.temp)}`}
+            style={{
+              width: `${calculateFrameSize(state.population)}px`,
+              height: `${calculateFrameSize(state.population)}px`,
+              marginBottom: '10px',
+              marginRight: index % 4 !== 3 ? '10px' : '0px', 
+            }}
+            onMouseOver={() => handleMouseOver(state)}
+            onMouseOut={handleMouseOut}
+            onClick={handleFrameClick}
+          >
+            <h2 className="text-lg font-semibold">{state.stateName}</h2>
+            {tooltipState === state && (
+              <div className=" text-black absolute bottom-full left-0 bg-white p-2 shadow-md">
+                <p>Population: {state.population}</p>
+                {state.weather ? <p>Temperature: {state.weather.main.temp}°C</p> : <p>Temperature: N/A</p>}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
